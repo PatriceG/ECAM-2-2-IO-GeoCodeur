@@ -14,7 +14,7 @@ import org.apache.http.util.EntityUtils;
  * Classe illustrant l'utilisation du HttpClient pour faire appel à un service
  * de Géocodage d'adresses
  * 
- * @author pat
+ * @author patrice 
  * 
  */
 public class GeoCodeur {
