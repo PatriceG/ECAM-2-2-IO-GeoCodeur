@@ -85,7 +85,7 @@ public class GeoCodeur {
 				
 		//String url = "http://maps.google.fr/maps?hl=fr&sll=" + lat + "," + lon
 		//		+ "&t=h&z=16";
-		String url = "http://maps.google.fr?ll=" + lat + "," + lon;
+		String url = "http://maps.google.fr?q=" + lat + "+" + lon;
 		return url;
 	}
 
