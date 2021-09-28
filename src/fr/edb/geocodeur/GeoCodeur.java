@@ -44,9 +44,9 @@ public class GeoCodeur {
 					+"&format=json&polygon=1&addressdetails=1");
 
 			System.out.println("Envoi requete vers: " + req.getURI());
-			// Exécution requ�te
+			// Exécution requète
 			HttpResponse rsp = httpclient.execute(req);
-			// Lecture r�ponse
+			// Lecture réponse
 			HttpEntity entity = rsp.getEntity();
 
 			System.out.println("----------------------------------------");
@@ -70,10 +70,11 @@ public class GeoCodeur {
 	 * d'OpenSteetMap et calculer une URL pour GoogleMaps centree sur cette
 	 * adresse
 	 * @param s
-	 *            - flux XML retourn� par Yahoo
+	 *            - flux JSON 
 	 * @return URL Google Maps
 	 */
 	public String calcGoogleMapsURL(String s) {
+		//ne faites jamais ça pour analyser du JSON ;)		
 		String lat="";
 		String lon="";
 		int lat1 = s.indexOf("lat\":\"")+6;
@@ -104,8 +105,9 @@ public class GeoCodeur {
 			}
 			String url = gc.calcGoogleMapsURL(res);
 			System.out.println("URL Google Maps: " + url);
-			//lancement du navigateur
-			String navigateur = "/usr/bin/firefox ";
+		
+			//lancement du navigateur selon l'OS
+			String navigateur = "/usr/bin/chromium ";
 		if(System.getProperty("os.name").startsWith("Windows")){
 			navigateur = "C:\\Program Files\\Internet Explorer\\iexplore.exe ";
 		}
